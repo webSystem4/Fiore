@@ -2,23 +2,22 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Yrsa', serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 html,
 body{
     background-color: #8cdaff;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     margin: 0px;
+    overflow: hidden;
 }
 nav{
     position: fixed;
     height: 90px;
     width: 100%;
     background-color: white;
+    z-index: 7;
 }
 main{
     padding-top: 90px;
@@ -29,10 +28,135 @@ section{
     flex: 4;
 }
 #background{
+    position: relative;
     width: 100%;
+    z-index: 4;
     object-fit: fill;
 }
 aside{
     flex: 1;
+    z-index: 4;
     background-color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+#optionHead{
+    font-size: 32pt;
+    color: #FD5D5D;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.option{
+    text-align: left;
+    padding: 20px 30px;
+}
+.optionName{
+    font-size: 24pt;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.optionInfo{
+    font-size: 15pt;
+    color: #9c9c9c;
+}
+#pageSwitch{
+    position: absolute;
+    bottom: 30px;
+}
+#sunLight{
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    z-index: 2;
+    animation: imagerotation 4s;
+    transform-origin: 50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#sunFace{
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    z-index: 3;
+    animation: imagescale 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes imagerotation{
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+@keyframes imagescale{
+    0% {transform: scale(0.85);}
+    50%{transform: scale(0.9);}
+    100%{transform: scale(0.85);}
+}
+.clouds{
+    z-index: 0;
+    position: absolute;
+    top: 250px;
+    right: 100px;
+}
+.plantBtns{
+    z-index: 7;
+    position: absolute;
+    top: 450px;
+    left: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.plants{
+    z-index: 5;
+    position: absolute;
+    top: 480px;
+    left: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.pots{
+    z-index: 6;
+    position: absolute;
+    top: 570px;
+    left: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.remainTimes{
+    z-index: 7;
+    position: absolute;
+    top: 650px;
+    left: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.waterBtns{
+    z-index: 8;
+    position: absolute;
+    top: 680px;
+    left: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.pot{
+    width: 100px;
+}
+.plant{
+    width: 90px;
+}
+.plantbtn{
+    font-size: 10pt;
+    color: #FD5D5D;
+    background-color: #FFF7BC;
+    border-radius: 10px;
+    padding: 5px;
+}
+.remaintime{
+    color: #FEE2C9;
+}
+.waterbtn{
+    width: 30px;
 }

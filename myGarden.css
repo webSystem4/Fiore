@@ -1,0 +1,104 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+html,
+body{
+    background-color: #8cdaff;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+nav{
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    background-color: white;
+    z-index: 7;
+}
+footer{
+    z-index: 0;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #f8dbbe;
+}
+#challengeBtn{
+    position: absolute;
+    right: 30px;
+    top: 100px;
+    width: 80px;
+}
+#challengeBox{
+    z-index: 10;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px #0000003c;
+    position: absolute;
+    right: 30px;
+    top: 190px;
+    width: 25%;
+    height: 68%;
+    padding: 10px 10px;
+    overflow-y: scroll;
+    
+}
+#challengeBox::-webkit-scrollbar{
+    width: 6px;
+}
+#challengeBox::-webkit-scrollbar-thumb{
+    height: 27%;
+    background-color: #9c9c9c;
+    border-radius: 10px;
+}
+#challengeBox::-webkit-scrollbar-track{
+    background-color: #9c9c9c30;
+}
+.challList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 20px;
+}
+.challName{
+    font-size: 18pt;
+}
+.challInfo{
+    margin-top: 5px;
+    font-size: 12pt;
+    color: #acacac;
+}
+.challcheck{
+    width: 30px;
+    height: 30px;
+}
+section{
+    width: 100%;
+    height: 85%;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+.plants{
+    z-index: 4;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+}
+.plant{
+    width: 10%;
+}
+.pot{
+    z-index: 5;
+    text-align: center;
+    width: 90%;
+}
+#pot{
+    width: 100%;
+}
