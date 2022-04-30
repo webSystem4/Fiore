@@ -13,7 +13,7 @@ function store() {
     //html 꽃 이미지 추가
     let flowerImage = document.createElement("img");
     flowerImage.className = "plant";
-    flowerImage.src = "./img/" + flower.flowerName + flower.step + ".png";
+    flowerImage.src = `./img/${flower.flowerName + flower.step }.png`;
     console.log(flower.flowerName);
     flowerZone.appendChild(flowerImage);
   }
