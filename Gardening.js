@@ -306,6 +306,7 @@ function changePanelType(type) {
 	for (let element of document.getElementsByClassName("option-sun")) {
 		if (type == "sun") {
 			element.style.display = "block";
+      //선택된 status의 background값 조절
 			if (sun.status == element.dataset.value) element.style.background = "#ffe0e0";
 			else element.style.background = "white";
 		} else element.style.display = "none";
@@ -313,6 +314,7 @@ function changePanelType(type) {
 	for (let element of document.getElementsByClassName("option-water")) {
 		if (type == "water") {
 			element.style.display = "block";
+      //선택된 status의 background값 조절
 			if (water.status == element.dataset.value) element.style.background = "#ffe0e0";
 			else element.style.background = "white";
 		} else element.style.display = "none";
@@ -335,6 +337,7 @@ function changePanelType(type) {
 			break;
 	}
 }
+//default
 changePanelType("sun");
 
 // 화분 세팅
@@ -351,6 +354,7 @@ sunElement.addEventListener("click", () => {
 	changePanelType("sun");
 });
 
+// 각각 화분에 sun값 조절
 sun.changeStatusListener((status) => {
 	changePanelType("sun");
 	potList.forEach((i) => {
@@ -389,10 +393,12 @@ seed.changeStatusListener((status) => {
 potList.forEach((pot) => {
 	pot.changeSelectListener((type, idx) => {
 		selectedPotIndex = idx;
+    // 화분이 있고 수확이 가능하면 수확하고 새 화분을 생성
 		if (type == "seed" && potList[selectedPotIndex] && potList[selectedPotIndex].isHarvestable) {
 			saveHarvest(potList[selectedPotIndex].harvest());
 			potList[selectedPotIndex] = new Pot(potList[selectedPotIndex].element, selectedPotIndex);
 		}
+    // 물 조절
 		if (type == "water" && potList[selectedPotIndex]) {
 			water.status = potList[selectedPotIndex].currentWater;
 		}
@@ -403,9 +409,11 @@ potList.forEach((pot) => {
 // cloud 세팅
 cloud.flowCloud();
 
+// 스토리지에 저장
 function saveHarvest(flower) {
 	let flowerList = JSON.parse(localStorage.getItem("flowerList")) || [];
 
+  // 중복이 아니어야 리스트에 추가
 	if (!flowerList.find((i) => i.flowerName == flower.flowerName && i.step == flower.step)) {
 		flowerList.push(flower);
 		localStorage.setItem("flowerList", JSON.stringify(flowerList));
