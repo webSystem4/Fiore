@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FIORE</title>
+<style>
+	html, body {margin: 0; padding: 0; height: 100%;}
+	header {width: 100%; height: 20%; background: white;}
+	section {height: 80%; width: 75%; float: left; background: aliceblue; overflow: scroll; padding-left: 5%;}
+	h2 {display: inline-blobk; color: #FF9999; margin-left: 5%; float: left; margin-top: 3.5%;}
+	h1 {color: #FF9999; font-size: 2em;}
+	div#menuDiv {display: inline-block; float: left; margin-top: 2.5%;}
+	div#menuDiv p {display: inline-block; text-align: center; float: left; margin-left: 2em; width: 6em; font-size: 1.1em;}
+	h2 a {text-decoration: none;}
+	h2 a:visited, h2 a:active, h2 a:hover  {color: #FF9999;}
+	#menuDiv a {text-decoration: none; display: inline-block; padding-bottom: 5px; color: black;}
+	#menuDiv a:visited {color: black;}
+	#menuDiv a:active, #menuDiv a:hover, p#here {border-bottom: 3px solid black;}
+	p#here:hover, p#here:active {border-bottom: none;}
+	nav {width: 20%; height: 80%; background: #FF9999; float: left; overflow: scroll;}
+	ul {list-style: none; text-align: center; padding-left:0;}
+	li {color: white; border: 2px solid white; border-bottom: 0px; padding: 0.5em;}
+</style>
+</head>
+<body>
+	<header>
+		<h2><a href="Main.html">FIORE</a></h2>
+		<div id="menuDiv"><strong>
+			<p id="here" style="margin-top: 1.5%;"><a href="Information.html">Flower Information</a></p>
+			<p><a href="Recommend.html">Recommend</a></p>
+			<p><a href="Spot.html">Flower Spot</a></p>
+			<p><a href="Gardening.html">Gardening</a></p>
+		</strong></div>
+	</header>
+	<nav id="nav">
+		<input type="text" id="input" size="18" value="물망초">
+		<button type="button" onclick=>이름검색</button>
+		<ul id="list">
+		</ul>
+	</nav>
+	<section id="section">
+	</section>
+	<script>
+	let xhr = new XMLHttpRequest();
+	let url = 'http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01'; /*URL*/
+	let queryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D'; /*Service Key*/
+	//queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+	queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('366'); /**/
+	//queryParams += '&' + encodeURIComponent('fCsnt') + '=' + encodeURIComponent('ㄱ'); /**/
+	//queryParams += '&' + encodeURIComponent('fMonth') + '=' + encodeURIComponent(''); /**/
+	//queryParams += '&' + encodeURIComponent('fDay') + '=' + encodeURIComponent(''); /**/
+	queryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('1'); /**/
+	//queryParams += '&' + encodeURIComponent('searchWord') + '=' + encodeURIComponent(''); /**/
+	xhr.open('GET', url + queryParams);
+	xhr.onreadystatechange = function () {
+	    if (this.readyState == 4) {
+	    	let xmlDoc = this.responseXML;
+	    	let flowNm = xmlDoc.getElementsByTagName("flowNm");
+	    	let n = document.getElementById("list");
+	        for(let i = 0; i < flowNm.length; i++){
+	        	let childObj = document.createElement("li");
+	        	childObj.addEventListener("click", aboutList);
+	        	childObj.innerHTML = flowNm[i].childNodes[0].nodeValue;
+	        	if(i == flowNm.length-1)
+	        		childObj.style.borderBottom = "2px solid white";
+	        	n.appendChild(childObj);
+	        }
+	    }
+	};
+
+	xhr.send('');
+	
+	let lastObj = null;
+	
+	function aboutList(){
+		if(lastObj){
+			lastObj.style.backgroundColor = "#FF9999";
+			lastObj.style.color = "white";
+		}
+		lastObj = this;
+		this.style.backgroundColor = "white";
+		this.style.color = "#FF9999";
+		let eventQueryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+		eventQueryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('9');
+		eventQueryParams += '&' + encodeURIComponent('searchWord') + '=' + encodeURIComponent(this.innerHTML);
+		xhr.open('GET', url + eventQueryParams);
+		xhr.onreadystatechange = function () {
+		    if (this.readyState == 4) {
+		    	let xmlDoc = this.responseXML;
+		    	let dataNo = xmlDoc.getElementsByTagName("dataNo");
+		    	let searchUrl = "http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerView01";
+		    	let searchQueryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+		    	searchQueryParams += '&' + encodeURIComponent('dataNo') + '=' + encodeURIComponent(dataNo[0].childNodes[0].nodeValue);
+		    	xhr.open('GET', searchUrl + searchQueryParams);
+		    	xhr.onreadystatechange = function () {
+		    	    if (this.readyState == 4) {
+		    	    	let xmlDoc = this.responseXML;
+		    	    	let flowNmObj = xmlDoc.getElementsByTagName("flowNm");
+		    	    	let flowNm = flowNmObj[0].childNodes[0].nodeValue;
+		    	    	let flowLangObj = xmlDoc.getElementsByTagName("flowLang");
+		    	    	let flowLang = flowLangObj[0].childNodes[0].nodeValue;
+		    	    	let fMonthObj = xmlDoc.getElementsByTagName("fMonth");
+		    	    	let fMonth = fMonthObj[0].childNodes[0].nodeValue;
+		    	    	let fDayObj = xmlDoc.getElementsByTagName("fDay");
+		    	    	let fDay = fDayObj[0].childNodes[0].nodeValue;
+		    	    	let fSctNmObj = xmlDoc.getElementsByTagName("fSctNm");
+		    	    	let fSctNm = fSctNmObj[0].childNodes[0].nodeValue;
+		    	    	let fEngNmObj = xmlDoc.getElementsByTagName("fEngNm");
+		    	    	let fEngNm = fEngNmObj[0].childNodes[0].nodeValue;
+		    	    	let fContentObj = xmlDoc.getElementsByTagName("fContent");
+		    	    	let fContent = fContentObj[0].childNodes[0].nodeValue;
+		    	    	let fUseObj = xmlDoc.getElementsByTagName("fUse");
+		    	    	let fUse = fUseObj[0].childNodes[0].nodeValue;
+		    	    	let fGrowObj = xmlDoc.getElementsByTagName("fGrow");
+		    	    	let fGrow = fGrowObj[0].childNodes[0].nodeValue;
+		    	    	let fTypeObj = xmlDoc.getElementsByTagName("fType");
+		    	    	let fType = fTypeObj[0].childNodes[0].nodeValue;
+		    	    	let imgUrl1Obj = xmlDoc.getElementsByTagName("imgUrl1");
+		    	    	let imgUrl1 = imgUrl1Obj[0].childNodes[0].nodeValue;
+		    	    	let section = document.getElementById("section");
+		    	    	section.innerHTML = "";
+		    	    	section.innerHTML = "<h1>"+flowNm+"</h1>";
+		    	    	section.innerHTML += "<p>학명: "+fSctNm+"</p>";
+		    	    	section.innerHTML += "<p>영문: "+fEngNm+"</p>";
+		    	    	section.innerHTML += "<p>꽃말: "+flowLang+"</p><br>";
+		    	    	section.innerHTML += "<h3>설명:</h3><p>"+fContent+"</p><br>";
+		    	    	section.innerHTML += "<h3>활용법:</h3><p>"+fUse+"</p><br>";
+		    	    	section.innerHTML += "<h3>키우는 법:</h3><p>"+fGrow+"</p><br>";
+		    	    	section.innerHTML += "<h3>자생지:</h3><p>"+fType+"</p><br>";
+		    	    	section.innerHTML += "<h3>이미지:</h3><img src='"+imgUrl1+"'>";
+		    	    }
+		    	};
+		    	xhr.send('');
+		    }
+		};
+		xhr.send('');
+	}
+	</script>
+	
+</body>
+</html>
