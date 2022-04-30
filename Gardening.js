@@ -23,7 +23,7 @@ class Sun extends Environment {
   }
   setStatus(status) {
     super.setStatus(status);
-    this.sun.children[1].children[0].src = `img/sun${this.status}.png`;
+    this.sun.children[1].children[0].src = `./img/sun${this.status}.png`;
     this.sun.children[0].style.animationDuration = `${
       4 + (3 - this.status) * 2
     }s`;
@@ -248,11 +248,11 @@ class Pot {
 
   changeDraw() {
     if (!this.step)
-      this.element.getElementsByClassName("plant")[0].src = `img/seed.png`;
+      this.element.getElementsByClassName("plant")[0].src = `./img/seed.png`;
     else
       this.element.getElementsByClassName(
         "plant"
-      )[0].src = `img/${this.flowerName}${this.step}.png`;
+      )[0].src = `./img/${this.flowerName}${this.step}.png`;
 
     if (this.isHarvestable)
       this.element.getElementsByClassName("remaintime")[0].innerHTML = "0:0";
