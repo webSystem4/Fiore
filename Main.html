@@ -6,7 +6,7 @@
 <style>
 	html, body {margin: 0; padding: 0; height: 120%;}
 	header {width: 100%; height: 20%; background: white; position: fixed;}
-	section {width: 100%; height: 75%; background: grey;}
+	section {width: 100%; height: 75%; background-image: url('img/back5.jpg'); background-size : cover;}
 	footer {width: 100%; height: 30%; background: #FF9999; color: white;}
 	h2 {display: inline-blobk; color: #FF9999; margin-left: 5%; float: left; margin-top: 3.5%;}
 	div#menuDiv {display: inline-block; float: left; margin-top: 2.5%;}
@@ -16,24 +16,43 @@
 	div#footerInformation {padding-top: 1em; padding-left: 15%; float: left;}
 	div#footerInformation {font-size: 1.1em;}
 	div#footerDevName {float: right; padding-right: 9%; padding-top: 5%;}
+	a {text-decoration: none; display: inline-block; padding-bottom: 5px;}
+	a:visited {color: black;}
+	a:active, a:hover {border-bottom: 3px solid black;}
 </style>
+<script>
+let rannum = parseInt(Math.random()*5);
+let backImg = document.getElementById("backImg");
+switch(rannum){
+case 0: backImg.style.backgroundImage = "url('img/back1.jpg')"; break;
+case 1: backImg.style.backgroundImage = "url('img/back2.jpg')"; break;
+case 2: backImg.style.backgroundImage = "url('img/back3.jpg')"; break;
+case 3: backImg.style.backgroundImage = "url('img/back4.jpg')"; break;
+case 4: backImg.style.backgroundImage = "url('img/back5.jpg')"; break;
+}
+//let n = document.getElementById("back");
+//n.style.backgroundImage = "url('img/back5.jpg')";
+
+
+</script>
 </head>
 <body>
 	<header>
 		<h2>FIORE</h2>
 		<div id="menuDiv"><strong>
-			<p style=" margin-top: 1.5%;">Flower Information</p>
-			<p>Recommend</p>
-			<p>Gardening</p>
+			<p style="margin-top: 1.5%;"><a href="">Flower Information</a></p>
+			<p><a href="">Recommend</a></p>
+			<p><a href="">Flower Spot</a></p>
+			<p><a href="Gardening.html">Gardening</a></p>
 		</strong></div>
 	</header>
-	<section>
-		<img src="">
+	<section id="backImg">
 	</section>
 	<footer>
 		<ul id="footerList"><strong>
 			<li> Information
 			<li> Recommend
+			<li> Spot
 			<li> Gardening
 		</strong></ul>
 		<div id="footerInformation">
