@@ -1,162 +1,222 @@
 @charset "utf-8";
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans KR', sans-serif;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR", sans-serif;
 }
 html,
-body{
-    background-color: #8cdaff;
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    overflow: hidden;
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	overflow: hidden;
 }
-nav{
-    position: fixed;
-    height: 90px;
-    width: 100%;
-    background-color: white;
-    z-index: 7;
+nav {
+	position: fixed;
+	height: 90px;
+	width: 100%;
+	background-color: white;
+	z-index: 7;
 }
-main{
-    padding-top: 90px;
-    display: flex;
-    flex-direction: row;
+main {
+	padding-top: 90px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: calc(100% - 90px);
 }
-section{
-    flex: 4;
+section {
+	flex: 4;
+
+	position: relative;
+	background-color: #8cdaff;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    user-select: none;
+    -webkit-user-drag: none;
 }
-#background{
-    position: relative;
-    width: 100%;
-    z-index: 4;
-    object-fit: fill;
-}
-aside{
-    flex: 1;
-    z-index: 4;
-    background-color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
-#optionHead{
-    font-size: 32pt;
-    color: #FD5D5D;
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-.option{
-    text-align: left;
-    padding: 20px 30px;
-}
-.optionName{
-    font-size: 24pt;
-    font-weight: bold;
-    padding-bottom: 10px;
-}
-.optionInfo{
-    font-size: 15pt;
-    color: #9c9c9c;
-}
-#pageSwitch{
-    position: absolute;
-    bottom: 30px;
-}
-#sunLight{
-    position: absolute;
-    top: 150px;
-    left: 300px;
-    z-index: 2;
-    animation: imagerotation 4s;
-    transform-origin: 50% 50%;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-#sunFace{
-    position: absolute;
-    top: 150px;
-    left: 300px;
+#background {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("img/background.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+
     z-index: 3;
-    animation: imagescale 2s;
+}
+aside {
+	flex: 1;
+	z-index: 4;
+	background-color: white;
+	text-align: center;
+	padding: 30px 20px;
+    overflow: auto;
+
+}
+aside::-webkit-scrollbar{
+    width: 6px;
+}
+aside::-webkit-scrollbar-thumb{
+    height: 27%;
+    background-color: #c2c2c2;
+    border-radius: 10px;
+}
+aside::-webkit-scrollbar-track{
+    background-color: #9c9c9c36;
+}
+#optionHead {
+	font-size: 32px;
+	color: #fd5d5d;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.option {
+	text-align: left;
+	padding: 20px 30px;
+
+    cursor: pointer;
+    user-select: none;
+}
+.option:hover{
+    background-color: #e7e7e7;
+}
+.option:active{
+    background-color: #ffe0e0;
+}
+.optionName {
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.optionInfo {
+	font-size: 15px;
+	color: #9c9c9c;
+}
+#pageSwitch {
+	position: absolute;
+	bottom: 30px;
+}
+#pageSwitch:hover{
+    animation: imageshake 1s;
     animation-iteration-count: infinite;
 }
-@keyframes imagerotation{
-    from { transform: rotate(0deg);}
-    to { transform: rotate(360deg);}
+#pageSwitch:active{
+    filter: brightness(80%);
 }
-@keyframes imagescale{
-    0% {transform: scale(0.85);}
-    50%{transform: scale(0.9);}
-    100%{transform: scale(0.85);}
+@keyframes imageshake{
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(5px);}
+    100% {transform: translateX(0px);}
 }
-.clouds{
-    z-index: 0;
-    position: absolute;
-    top: 250px;
-    right: 100px;
+#sunLight {
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	z-index: 2;
+	animation: imagerotation 4s;
+	transform-origin: 50% 50%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
-.plantBtns{
-    z-index: 7;
-    position: absolute;
-    top: 450px;
-    left: 300px;
-    width: 600px;
-    display: flex;
+#sunFace {
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	z-index: 3;
+	animation: imagescale 2s;
+	animation-iteration-count: infinite;
+}
+@keyframes imagerotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes imagescale {
+	0% {
+		transform: scale(0.85);
+	}
+	50% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(0.85);
+	}
+}
+.clouds {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.clouds img{
+	position: absolute;
+
+	transition: 0.25s;
+}
+.pots {
+    position: relative;
+    
+    width: 60%;
+    margin-top: 20%;
+    
+	display: flex;
+	justify-content: space-around;
+    
+	z-index: 100;
+
+}
+.pot {
+    position: relative;
+	display: flex;
+	flex-direction: column;
     justify-content: space-around;
+
 }
-.plants{
-    z-index: 5;
+
+.plantbtn {
+    cursor: pointer;
+
+	font-size: 16px;
+	color: #fd5d5d;
+    font-weight: bold;
+	background-color: #fff7bc;
+    border: none;
+	border-radius: 100px;
+	padding: 10px 20px;
+    width: fit-content;
+
+    margin: 0 auto;
+}
+.plantbtn:active{
+    filter: brightness(80%);
+}
+.remaintime {
     position: absolute;
-    top: 480px;
-    left: 300px;
-    width: 600px;
-    display: flex;
-    justify-content: space-around;
+    left: 50%;
+    bottom: 13%;
+
+    transform: translateX(-50%);
+
+	color: #fee2c9;
+    font-size: 20px;
 }
-.pots{
-    z-index: 6;
-    position: absolute;
-    top: 570px;
-    left: 300px;
-    width: 600px;
-    display: flex;
-    justify-content: space-around;
+.waterbtn {
+    cursor: pointer;
+
+    position:absolute;
+	width: 50px;
+    left: 50%;
+    bottom: -5%;
+
+    transform: translateX(-50%);
 }
-.remainTimes{
-    z-index: 7;
-    position: absolute;
-    top: 650px;
-    left: 300px;
-    width: 600px;
-    display: flex;
-    justify-content: space-around;
-}
-.waterBtns{
-    z-index: 8;
-    position: absolute;
-    top: 680px;
-    left: 300px;
-    width: 600px;
-    display: flex;
-    justify-content: space-around;
-}
-.pot{
-    width: 100px;
-}
-.plant{
-    width: 90px;
-}
-.plantbtn{
-    font-size: 10pt;
-    color: #FD5D5D;
-    background-color: #FFF7BC;
-    border-radius: 10px;
-    padding: 5px;
-}
-.remaintime{
-    color: #FEE2C9;
-}
-.waterbtn{
-    width: 30px;
+.waterbtn:active{
+    filter: brightness();
 }

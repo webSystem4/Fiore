@@ -6,38 +6,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="myGarden.css">
+    <script type="text/javascript" defer src="myGarden.js"></script>
     <title>Gardening</title>
 </head>
 
 <body>
     <nav>fiore info reco spot garden</nav>
-    <aside>
+    <a href="#" onclick="window.open('Gardening.html')">
+    <img id="pageSwitch" src="img/reversearrow.png" /></a>
+    <aside> 
         <img id="challengeBtn" src="img/challengeIcon.png">
         <div id="challengeBox">
             <div class="challList">
-                <div class="challText">
-                    <div class="challName">도전과제명</div>
-                    <div class="challInfo">도전과제에 대한
-                        설명이 표시됩니다.</div>
+                <div class="challText" data-value="rose4">
+                    <div class="challName">순수</div>
+                    <div class="challInfo">하얀 장미꽃이 피었습니다.</div>
                 </div>
                 <img class="challcheck" src="img/checkGreen.png">
-                <hr>
             </div>
             <div class="challList">
-                <div class="challText">
-                    <div class="challName">도전과제명</div>
-                    <div class="challInfo">도전과제에 대한
-                        설명이 표시됩니다.</div>
+                <div class="challText" data-value="rose3">
+                    <div class="challName">열렬한 사랑</div>
+                    <div class="challInfo">빨간 장미꽃 가시에 주의하세요.</div>
                 </div>
                 <img class="challcheck" src="img/checkGreen.png">
-                <hr>
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="hyacinth3">
+                    <div class="challName">불변</div>
+                    <div class="challInfo">푸른 히아신스가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="hyacinth4">
+                    <div class="challName">영원한 사랑</div>
+                    <div class="challInfo">보라색 히아신스가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="tulip3">
+                    <div class="challName">수줍음</div>
+                    <div class="challInfo">주황색 튤립이 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="tulip4">
+                    <div class="challName">애정</div>
+                    <div class="challInfo">분홍색 튤립이 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="lily3">
+                    <div class="challName">순결</div>
+                    <div class="challInfo">하얀 백합이 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="lily4">
+                    <div class="challName">죽음</div>
+                    <div class="challInfo">노란 백합이 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="anemone3">
+                    <div class="challName">기다림</div>
+                    <div class="challInfo">보라색 아네모네가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="anemone4">
+                    <div class="challName">고독</div>
+                    <div class="challInfo">빨간색 아네모네가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="daffodil3">
+                    <div class="challName">자기애</div>
+                    <div class="challInfo">노란 수선화가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="daffodil4">
+                    <div class="challName">자존심</div>
+                    <div class="challInfo">하얀 수선화가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="lavender3">
+                    <div class="challName">침묵</div>
+                    <div class="challInfo">라벤더꽃이 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="sunflower3">
+                    <div class="challName">동경</div>
+                    <div class="challInfo">해바라기가 피었습니다.</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
+            </div>
+            <div class="challList">
+                <div class="challText" data-value="0">
+                    <div class="challName">완벽</div>
+                    <div class="challInfo">모든 꽃을 수집했습니다!</div>
+                </div>
+                <img class="challcheck" src="img/checkGreen.png">
             </div>
         </div>
     </aside>
     <section>
         <article class="plants">
-            <img class="plant" src="img/rose4.png">
-            <img class="plant" src="img/lily3.png">
         </article>
         <article class="pot">
             <img id="pot" src="img/longpot.png">
