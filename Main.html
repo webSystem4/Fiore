@@ -154,6 +154,26 @@
     let rannum = Math.floor((Math.random() * 7 + 1));
     let backImg = document.getElementById("backImg");
     backImg.style.backgroundImage = `url('./img/back${rannum}.jpg')`;
+
+    
+    window.addEventListener('scroll', function() {
+        if(window.scrollY){
+            document.getElementById("topbar").style.backgroundColor = `#ffffff`;
+            document.getElementById("logo").src = "./img/logo.png"
+            document.getElementsByClassName("topnav")[0].style.color = "#000000";
+            document.getElementsByClassName("topnav")[1].style.color = "#000000";
+            document.getElementsByClassName("topnav")[2].style.color = "#000000";
+            document.getElementsByClassName("topnav")[3].style.color = "#000000";
+        }else{
+            document.getElementById("topbar").style.backgroundColor = "";
+            document.getElementById("logo").src = "./img/whitelogo.png"
+            document.getElementsByClassName("topnav")[0].style.color = "";
+            document.getElementsByClassName("topnav")[1].style.color = "";
+            document.getElementsByClassName("topnav")[2].style.color = "";
+            document.getElementsByClassName("topnav")[3].style.color = "";
+            
+        }
+    });
 </script>
 
 </html>
