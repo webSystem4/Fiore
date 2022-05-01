@@ -22,7 +22,7 @@ function store() {
   const clearFlowerList = flowerList.map(
     (flower) => flower.flowerName + flower.step
   );
-  // 
+
   [...challengeList].forEach((element) => {
     // '완벽' 과제에 대해서는 건너뜀
     if(element.dataset.value == "0") return;

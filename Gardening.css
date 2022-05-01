@@ -11,12 +11,32 @@ body {
 	margin: 0px;
 	overflow: hidden;
 }
-nav {
+header {
+	z-index: 99;
 	position: fixed;
-	height: 90px;
 	width: 100%;
-	background-color: white;
-	z-index: 7;
+	height: 90px;
+	padding-left: 50px;
+	box-shadow: 2px 0px 4px #0000004f;
+
+	display: flex;
+}
+#logo {
+	width: 90px;
+}
+.topnav {
+	width: 100px;
+	text-align: center;
+	padding: 30px 10px;
+	margin-left: 60px;
+	font-size: 22px;
+	text-decoration: none;
+	color: black;
+	font-family: 'Yrsa', serif;
+}
+.topnav:hover {
+	border-bottom: 3px solid #FD5D5D;
+	color: #FD5D5D;
 }
 main {
 	padding-top: 90px;

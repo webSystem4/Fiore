@@ -1,125 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="Gardening.css" />
-		<script type="text/javascript" defer src="Gardening.js"></script>
-		<title>Gardening</title>
-	</head>
 
-	<body>
-		<nav>fiore info reco spot garden</nav>
-		<main>
-			<section>
-				<div id="background"></div>
-				<div class="sun">
-					<div id="sunLight">
-						<img src="./img/sunlight.png" />
-					</div>
-					<div id="sunFace">
-						<img src="./img/sun3.png" />
-					</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Yrsa&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Gardening.css" />
+	<script type="text/javascript" defer src="Gardening.js"></script>
+	<title>Gardening</title>
+</head>
+
+<body>
+	<header id="topbar">
+        <a href="Main.html"> <img id="logo" src="./img/logo.png"> </a>
+        <a class="topnav">Flower<br>Information</a>
+        <a class="topnav">Recommend</a>
+        <a class="topnav">Flower<br>Spot</a>
+        <a class="topnav" href="Gardening.html">Gardening</a>
+    </header>
+	<main>
+		<section>
+			<div id="background"></div>
+			<div class="sun">
+				<div id="sunLight">
+					<img src="./img/sunlight.png" />
 				</div>
-				<div class="clouds">
-					<img src="./img/cloud1.png" />
-					<img src="./img/cloud2.png" />
-					<img src="./img/cloud1.png" />
-					<img src="./img/cloud2.png" />
+				<div id="sunFace">
+					<img src="./img/sun3.png" />
 				</div>
-				<article class="pots">
-					<div class="pot">
-						<button class="plantbtn">씨앗심기</button>
-						<img class="plant" src="./img/seed.png" />
-						<img class="background" src="./img/pot.png" />
-						<div class="remaintime">00:00</div>
-						<img class="waterbtn" src="./img/waterBtn.png" />
-					</div>
-					<div class="pot">
-						<button class="plantbtn">수확하기</button>
-						<img class="plant" src="./img/seed.png" />
-						<img class="background" src="./img/pot.png" />
-						<div class="remaintime">00:00</div>
-						<img class="waterbtn" src="./img/waterBtn.png" />
-					</div>
-					<div class="pot">
-						<button class="plantbtn">수확하기</button>
-						<img class="plant" src="./img/seed.png" />
-						<img class="background" src="./img/pot.png" />
-						<div class="remaintime">00:00</div>
-						<img class="waterbtn" src="./img/waterBtn.png" />
-					</div>
-					<div class="pot">
-						<button class="plantbtn">수확하기</button>
-						<img class="plant" src="./img/seed.png" />
-						<img class="background" src="./img/pot.png" />
-						<div class="remaintime">00:00</div>
-						<img class="waterbtn" src="./img/waterBtn.png" />
-					</div>
-				</article>
-			</section>
-			<aside>
-				<div id="optionHead">OPTION</div>
-				<div class="option option-sun" data-value="3">
-					<div class="optionName">상</div>
-					<div class="optionInfo">강한 햇빛이 비춰집니다.</div>
+			</div>
+			<div class="clouds">
+				<img src="./img/cloud1.png" />
+				<img src="./img/cloud2.png" />
+				<img src="./img/cloud1.png" />
+				<img src="./img/cloud2.png" />
+			</div>
+			<article class="pots">
+				<div class="pot">
+					<button class="plantbtn">씨앗심기</button>
+					<img class="plant" src="./img/seed.png" />
+					<img class="background" src="./img/pot.png" />
+					<div class="remaintime">00:00</div>
+					<img class="waterbtn" src="./img/waterBtn.png" />
 				</div>
-				<div class="option option-sun" data-value="2">
-					<div class="optionName">중</div>
-					<div class="optionInfo">적당한 햇빛이 비춰집니다..</div>
+				<div class="pot">
+					<button class="plantbtn">수확하기</button>
+					<img class="plant" src="./img/seed.png" />
+					<img class="background" src="./img/pot.png" />
+					<div class="remaintime">00:00</div>
+					<img class="waterbtn" src="./img/waterBtn.png" />
 				</div>
-				<div class="option option-sun" data-value="1">
-					<div class="optionName">하</div>
-					<div class="optionInfo">살짝 그늘진 효과입니다.</div>
+				<div class="pot">
+					<button class="plantbtn">수확하기</button>
+					<img class="plant" src="./img/seed.png" />
+					<img class="background" src="./img/pot.png" />
+					<div class="remaintime">00:00</div>
+					<img class="waterbtn" src="./img/waterBtn.png" />
 				</div>
-				<div class="option option-water" data-value="3">
-					<div class="optionName">많이</div>
-					<div class="optionInfo">충분히 양껏 줍니다.</div>
+				<div class="pot">
+					<button class="plantbtn">수확하기</button>
+					<img class="plant" src="./img/seed.png" />
+					<img class="background" src="./img/pot.png" />
+					<div class="remaintime">00:00</div>
+					<img class="waterbtn" src="./img/waterBtn.png" />
 				</div>
-				<div class="option option-water" data-value="2">
-					<div class="optionName">적당히</div>
-					<div class="optionInfo">흙이 마르지 않게 적셔줍니다.</div>
-				</div>
-				<div class="option option-water" data-value="1">
-					<div class="optionName">조금</div>
-					<div class="optionInfo">흙이 마르면 조금 줍니다.</div>
-				</div>
-				<div class="option option-seed" data-value="hyacinth">
-					<div class="optionName">히아신스</div>
-					<div class="optionInfo">작은 꼿이 덩어리로 핍니다.<br />파란색과 보라색이 있습니다.</div>
-				</div>
-				<div class="option option-seed" data-value="tulip">
-					<div class="optionName">튤립</div>
-					<div class="optionInfo">귀여운 구근 식물입니다.<br />주황색과 분홍색이 있습니다.</div>
-				</div>
-				<div class="option option-seed" data-value="rose">
-					<div class="optionName">장미</div>
-					<div class="optionInfo">로맨틱한 향기의 꽃입니다.<br />붉은색과 하얀색이 있습니다.</div>
-				</div>
-				<div class="option option-seed" data-value="lily">
-					<div class="optionName">백합</div>
-					<div class="optionInfo">순결을 상징하는 꽃입니다.<br />흰색과 노란색이 있습니다.</div>
-				</div>
-				<div class="option option-seed" data-value="anemone">
-					<div class="optionName">아네모네</div>
-					<div class="optionInfo">아~ 네모네.<br />보라색과 붉은색이 있습니다.</div>
-				</div>
-				<div class="option option-seed" data-value="daffodil">
-					<div class="optionName">수선화</div>
-					<div class="optionInfo">물을 많이 먹는 꽃입니다.<br />노란색과 하얀색이 있습니다.</div>
-				</div>
-				<div class="option option-seed" data-value="lavender">
-					<div class="optionName">라벤더</div>
-					<div class="optionInfo">아름다운 연보라색이 우아합니다.</div>
-				</div>
-				<div class="option option-seed" data-value="sunflower">
-					<div class="optionName">해바라기</div>
-					<div class="optionInfo">태양을 사랑하는 샛노란 꽃입니다.</div>
-				</div>
-                <a href="#" onclick="window.open('myGarden.html')">
+			</article>
+		</section>
+		<aside>
+			<div id="optionHead">OPTION</div>
+			<div class="option option-sun" data-value="3">
+				<div class="optionName">상</div>
+				<div class="optionInfo">강한 햇빛이 비춰집니다.</div>
+			</div>
+			<div class="option option-sun" data-value="2">
+				<div class="optionName">중</div>
+				<div class="optionInfo">적당한 햇빛이 비춰집니다..</div>
+			</div>
+			<div class="option option-sun" data-value="1">
+				<div class="optionName">하</div>
+				<div class="optionInfo">살짝 그늘진 효과입니다.</div>
+			</div>
+			<div class="option option-water" data-value="3">
+				<div class="optionName">많이</div>
+				<div class="optionInfo">충분히 양껏 줍니다.</div>
+			</div>
+			<div class="option option-water" data-value="2">
+				<div class="optionName">적당히</div>
+				<div class="optionInfo">흙이 마르지 않게 적셔줍니다.</div>
+			</div>
+			<div class="option option-water" data-value="1">
+				<div class="optionName">조금</div>
+				<div class="optionInfo">흙이 마르면 조금 줍니다.</div>
+			</div>
+			<div class="option option-seed" data-value="hyacinth">
+				<div class="optionName">히아신스</div>
+				<div class="optionInfo">작은 꼿이 덩어리로 핍니다.<br />파란색과 보라색이 있습니다.</div>
+			</div>
+			<div class="option option-seed" data-value="tulip">
+				<div class="optionName">튤립</div>
+				<div class="optionInfo">귀여운 구근 식물입니다.<br />주황색과 분홍색이 있습니다.</div>
+			</div>
+			<div class="option option-seed" data-value="rose">
+				<div class="optionName">장미</div>
+				<div class="optionInfo">로맨틱한 향기의 꽃입니다.<br />붉은색과 하얀색이 있습니다.</div>
+			</div>
+			<div class="option option-seed" data-value="lily">
+				<div class="optionName">백합</div>
+				<div class="optionInfo">순결을 상징하는 꽃입니다.<br />흰색과 노란색이 있습니다.</div>
+			</div>
+			<div class="option option-seed" data-value="anemone">
+				<div class="optionName">아네모네</div>
+				<div class="optionInfo">아~ 네모네.<br />보라색과 붉은색이 있습니다.</div>
+			</div>
+			<div class="option option-seed" data-value="daffodil">
+				<div class="optionName">수선화</div>
+				<div class="optionInfo">물을 많이 먹는 꽃입니다.<br />노란색과 하얀색이 있습니다.</div>
+			</div>
+			<div class="option option-seed" data-value="lavender">
+				<div class="optionName">라벤더</div>
+				<div class="optionInfo">아름다운 연보라색이 우아합니다.</div>
+			</div>
+			<div class="option option-seed" data-value="sunflower">
+				<div class="optionName">해바라기</div>
+				<div class="optionInfo">태양을 사랑하는 샛노란 꽃입니다.</div>
+			</div>
+			<a href="#" onclick="window.open('myGarden.html')">
 				<img id="pageSwitch" src="./img/arrow.png" /></a>
-			</aside>
-		</main>
-	</body>
+		</aside>
+	</main>
+</body>
+
 </html>
