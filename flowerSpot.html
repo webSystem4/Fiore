@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower Spot</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=brz95ltnbc"></script>
+</head>
+<body>
+  <main>
+    <!-- 지도 section -->
+    <section id="mapbox">
+      <div id="map"></div>
+    </section>
+
+    <!-- 꽃 정보 section -->
+    <section id="flowerSpot">
+      <h1 class="tableHeader">Korea's Flower Hotspots of 2022</h1>
+      <article>
+        <table>
+          <thead>
+            <tr>
+              <th>Flower</th>
+              <th>Spot</th>
+              <th>Season</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3" class="flowerType">벚꽃</td>
+              <td>서울 여의도 한강공원</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td>하동 쌍계사</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td>경주 보문단지</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td rowspan="1" class="flowerType">튤립</td>
+              <td>제주 상효원</td>
+              <td>3월 초~4월 초</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="flowerType">매화</td>
+              <td>하동 직전리</td>
+              <td>3월 중순~3월 말</td>
+            </tr>
+            <tr>
+              <td>광양 매화마을</td>
+              <td>3월 중순~3월 말</td>
+            </tr>
+            <tr>
+              <td rowspan="1" class="flowerType">산수유</td>
+              <td>구례 산동면</td>
+              <td>3월 중순~4월 중순</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="flowerType">유채꽃</td>
+              <td id="flowerPlace">삼척 상맹방리</td>
+              <td>3월 말~4월 중순</td>
+            </tr>
+            <tr>
+              <td>제주 가시리</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="flowerType">등나무꽃</td>
+              <td>공주 동학사</td>
+              <td>4월 말~5월 중순</td>
+            </tr>
+            <tr>
+              <td>대구 청라언덕</td>
+              <td>4월 말~5월 중순</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <p id="dataSource">자료출처 : 대한민국 기상청, 한국신문기사, 대한민국 정책브리핑, 거제도 농업기술원</p>
+    </section>
+  </main>
+<script src="main.js"></script>
+</body>
+</html>
