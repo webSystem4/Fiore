@@ -33,8 +33,7 @@
 		</strong></div>
 	</header>
 	<nav id="nav">
-		<input type="text" id="input" size="18" value="물망초">
-		<button type="button" onclick=>이름검색</button>
+		<input onkeyup="searchName()" type="text" id="input" size=100% placeholder="꽃 이름 검색" value="">
 		<ul id="list">
 		</ul>
 	</nav>
@@ -134,6 +133,21 @@
 		    }
 		};
 		xhr.send('');
+	}
+	
+	function searchName(){
+		value = document.getElementById("input").value;
+		liObj = document.getElementsByTagName("li");
+		
+		for(i=0; i<liObj.length; i++){
+			itemName = liObj[i].innerHTML;
+			if(itemName.indexOf(value)>-1){
+				liObj[i].style.display = "flex";
+				liObj[i].style.borderBottom = "2px solid white";
+			}else{
+				liObj[i].style.display = "none";
+			}
+		}
 	}
 	</script>
 	
