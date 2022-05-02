@@ -4,6 +4,37 @@ const eachMonthFlower = document.getElementsByClassName("months");
 const flowerInfo = document.getElementsByClassName("flowerInfo");
 const dayflowerInfo = document.getElementsByClassName("dayflowerInfo")[0];
 
+let date = new Date();
+let xhr = new XMLHttpRequest();
+let url = 'http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlower01';
+let queryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+queryParams += '&' + encodeURIComponent('fMonth') + '=' + encodeURIComponent(String(date.getMonth()+1));
+queryParams += '&' + encodeURIComponent('fDay') + '=' + encodeURIComponent(String(date.getDate()));
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+	if (this.readyState == 4) {
+		let xmlDoc = this.responseXML;
+		let flowNm = xmlDoc.getElementsByTagName("flowNm");
+		let flowerName = document.getElementById("tdflowerName");
+		flowerName.innerHTML = flowNm[0].childNodes[0].nodeValue;
+		let fContent = xmlDoc.getElementsByTagName("fContent");
+		let flowerExplain = document.getElementById("tdflowerExplain");
+		flowerExplain.innerHTML = fContent[0].childNodes[0].nodeValue;
+		let flowLang = xmlDoc.getElementsByTagName("flowLang");
+		let flowLangArray = flowLang[0].childNodes[0].nodeValue.split(",");
+		let flowertag = document.getElementById("tdflowertag");
+		flowertag.innerHTML= "";
+		for(i=0; i<flowLangArray.length; i++){
+			flowertag.innerHTML += "#";
+			flowertag.innerHTML += flowLangArray[i];
+		}
+		let fimgUrl1 = xmlDoc.getElementsByTagName("imgUrl1");
+		let flowerImage = document.getElementById("tdflowerImage");
+		flowerImage.src = fimgUrl1[0].childNodes[0].nodeValue;
+	}
+};
+xhr.send('');
+
 function changeTodayMonth(type) {
   for (let i=0; i<document.getElementsByClassName("option-month").length; i++) {
     if (type == "monthFlower") {
