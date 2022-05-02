@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FIORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Yrsa&display=swap" rel="stylesheet">
+<style>
+	@charset "utf-8";
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    body{
+    		height: 100%;
+    		width: 100%;
+    		margin: 0;
+            padding: 0;
+    	}
+	header {
+            z-index: 99;
+            position: fixed;
+            width: 100%;
+            height: 90px;
+            padding-left: 50px;
+            box-shadow: 2px 0px 4px #0000004f;
+            background-color: white;
+
+            display: flex;
+        }
+	section {
+			margin-top: 90px;
+			height: 80%; 
+			width: 75%; 
+			float: left; 
+			overflow: scroll; 
+			padding-left: 5%;
+			padding-top: 5%;
+			-ms-overflow-style: none;
+		}
+	section::-webkit-scrollbar{
+			display: none;
+	}
+	#logo {
+            width: 90px;
+       	}
+    .topnav {
+            width: 100px;
+            text-align: center;
+            padding: 30px 10px;
+            margin-left: 60px;
+            font-size: 22px;
+            text-decoration: none;
+            color: black;
+            font-family: 'Yrsa', serif;
+        }
+     .topnav:hover {
+            border-bottom: 3px solid #FD5D5D;
+            color: #FD5D5D;
+        }
+	h2 a {
+			text-decoration: none;
+		}
+	nav {
+			margin-top: 90px; 
+			width: 20%; 
+			height: 80%; 
+			float: left; 
+			overflow: scroll;
+			-ms-overflow-style: none;
+		}
+	nav::-webkit-scrollbar{
+			display: none;
+		}
+	ul {
+			list-style: none; 
+		}
+	section div{
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	li {
+			color: black; 
+			height: 66px;
+			border: 1px solid #C5C5C5; 
+			padding-top: 1.3em;
+			box-sizing: border-box;
+			padding-left: 1em;
+			font-family: "Noto Sans KR", sans-selif;
+		}
+	li:hover {
+		background: #FFD7D7;
+		}
+	#input{
+			width: 90%;
+			height: 50px;
+			margin: 12px;
+			left: -10px;
+
+			background: #EBEBEB;
+			border: 1px solid #EBEBEB;
+			border-radius: 15px;
+		}
+	#img{
+			width: 224px;
+			height: 224px;
+			background: #FFECEC;
+			border-radius: 10px;
+			float: left;
+		}
+	#nameTag{
+			float: left;
+			position: relative;
+			margin-left: 14px;
+			width: 592px;
+			height: 224px;
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#innerNameTag{
+			position: absolute;
+			bottom: 18px;
+			left: 18px;
+		}
+	#flowLang{
+			width: 794px;
+			height: 91px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fContent{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fUse{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fGrow{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fType{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+</style>
+</head>
+<body>
+	<header id="topbar">
+        <a href="Main.html"> <img id="logo" src="./img/logo.png"> </a>
+        <a class="topnav">Flower<br>Information</a>
+        <a class="topnav">Recommend</a>
+        <a class="topnav">Flower<br>Spot</a>
+        <a class="topnav" href="Gardening.html">Gardening</a>
+    </header>
+	<nav id="nav">
+		<ul id="list">
+		<input onkeyup="searchName()" type="text" id="input" placeholder="꽃 이름 검색" value="">
+		</ul>
+	</nav>
+	<section id="section">
+	</section>
+	<script>
+	let xhr = new XMLHttpRequest();
+	let url = 'http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01';
+	let queryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+	queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('366');
+	queryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('1');
+	xhr.open('GET', url + queryParams);
+	xhr.onreadystatechange = function () {
+	    if (this.readyState == 4) {
+	    	let xmlDoc = this.responseXML;
+	    	let flowNm = xmlDoc.getElementsByTagName("flowNm");
+	    	let n = document.getElementById("list");
+	        for(let i = 0; i < flowNm.length; i++){
+	        	let childObj = document.createElement("li");
+	        	childObj.addEventListener("click", aboutList);
+	        	childObj.innerHTML = flowNm[i].childNodes[0].nodeValue;
+	        	n.appendChild(childObj);
+	        }
+	    }
+	};
+
+	xhr.send('');
+	
+	let lastObj = null;
+	
+	function aboutList(){
+		if(lastObj){
+			lastObj.style.backgroundColor = "white";
+		}
+		lastObj = this;
+		this.style.backgroundColor = "#FFD7D7";
+		let eventQueryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+		eventQueryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('9');
+		eventQueryParams += '&' + encodeURIComponent('searchWord') + '=' + encodeURIComponent(this.innerHTML);
+		xhr.open('GET', url + eventQueryParams);
+		xhr.onreadystatechange = function () {
+		    if (this.readyState == 4) {
+		    	let xmlDoc = this.responseXML;
+		    	let dataNo = xmlDoc.getElementsByTagName("dataNo");
+		    	let searchUrl = "http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerView01";
+		    	let searchQueryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+		    	searchQueryParams += '&' + encodeURIComponent('dataNo') + '=' + encodeURIComponent(dataNo[0].childNodes[0].nodeValue);
+		    	xhr.open('GET', searchUrl + searchQueryParams);
+		    	xhr.onreadystatechange = function () {
+		    	    if (this.readyState == 4) {
+		    	    	let xmlDoc = this.responseXML;
+		    	    	let flowNmObj = xmlDoc.getElementsByTagName("flowNm");
+		    	    	let flowNm = flowNmObj[0].childNodes[0].nodeValue;
+		    	    	let flowLangObj = xmlDoc.getElementsByTagName("flowLang");
+		    	    	let flowLang = flowLangObj[0].childNodes[0].nodeValue;
+		    	    	let fMonthObj = xmlDoc.getElementsByTagName("fMonth");
+		    	    	let fMonth = fMonthObj[0].childNodes[0].nodeValue;
+		    	    	let fDayObj = xmlDoc.getElementsByTagName("fDay");
+		    	    	let fDay = fDayObj[0].childNodes[0].nodeValue;
+		    	    	let fSctNmObj = xmlDoc.getElementsByTagName("fSctNm");
+		    	    	let fSctNm = fSctNmObj[0].childNodes[0].nodeValue;
+		    	    	let fEngNmObj = xmlDoc.getElementsByTagName("fEngNm");
+		    	    	let fEngNm = fEngNmObj[0].childNodes[0].nodeValue;
+		    	    	let fContentObj = xmlDoc.getElementsByTagName("fContent");
+		    	    	let fContent = fContentObj[0].childNodes[0].nodeValue;
+		    	    	let fUseObj = xmlDoc.getElementsByTagName("fUse");
+		    	    	let fUse = fUseObj[0].childNodes[0].nodeValue;
+		    	    	let fGrowObj = xmlDoc.getElementsByTagName("fGrow");
+		    	    	let fGrow = fGrowObj[0].childNodes[0].nodeValue;
+		    	    	let fTypeObj = xmlDoc.getElementsByTagName("fType");
+		    	    	let fType = fTypeObj[0].childNodes[0].nodeValue;
+		    	    	let imgUrl1Obj = xmlDoc.getElementsByTagName("imgUrl1");
+		    	    	let imgUrl1 = imgUrl1Obj[0].childNodes[0].nodeValue;
+		    	    	let section = document.getElementById("section");
+		    	    	section.innerHTML = "";
+		    	    	section.innerHTML = "<div id='img' style='background: url("+imgUrl1+"); background-repeat : no-repeat; background-size: cover;'></div>";
+		    	    	section.innerHTML += "<div id='nameTag'><div id='innerNameTag'><h1>"+flowNm+"</h1>"+
+		    	    						 "<p id='fSctNm'>"+fSctNm+"</p>" +
+		    	    						 "<p id='fEngNm'>"+fEngNm+"</p></div></div>";
+		    	    	section.innerHTML += "<div id='flowLang'><h3>꽃말</h3><br><p>"+flowLang+"</p></div>";
+		    	    	section.innerHTML += "<div id='fContent'><h3>설명</h3><br><p>"+fContent+"</p></div>";
+		    	    	section.innerHTML += "<div id='fUse'><h3>이용법</h3><br><p>"+fUse+"</p></div>";
+		    	    	section.innerHTML += "<div id='fGrow'><h3>기르는 법</h3><br><p>"+fGrow+"</p></div>";
+		    	    	section.innerHTML += "<div id='fType'><h3>자생지</h3><br><p>"+fType+"</p></div>";
+		    	    }
+		    	};
+		    	xhr.send('');
+		    }
+		};
+		xhr.send('');
+	}
+	
+	function searchName(){
+		value = document.getElementById("input").value;
+		liObj = document.getElementsByTagName("li");
+		
+		for(i=0; i<liObj.length; i++){
+			itemName = liObj[i].innerHTML;
+			if(itemName.indexOf(value)>-1){
+				liObj[i].style.display = "flex";
+			}else{
+				liObj[i].style.display = "none";
+			}
+		}
+	}
+	</script>
+	
+</body>
+</html>
