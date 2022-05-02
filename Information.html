@@ -3,53 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <title>FIORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Yrsa&display=swap" rel="stylesheet">
 <style>
-	html, body {margin: 0; padding: 0; height: 100%;}
-	header {width: 100%; height: 20%; background: white;}
-	section {height: 80%; width: 75%; float: left; background: aliceblue; overflow: scroll; padding-left: 5%;}
-	h2 {display: inline-blobk; color: #FF9999; margin-left: 5%; float: left; margin-top: 3.5%;}
-	h1 {color: #FF9999; font-size: 2em;}
-	div#menuDiv {display: inline-block; float: left; margin-top: 2.5%;}
-	div#menuDiv p {display: inline-block; text-align: center; float: left; margin-left: 2em; width: 6em; font-size: 1.1em;}
-	h2 a {text-decoration: none;}
-	h2 a:visited, h2 a:active, h2 a:hover  {color: #FF9999;}
-	#menuDiv a {text-decoration: none; display: inline-block; padding-bottom: 5px; color: black;}
-	#menuDiv a:visited {color: black;}
-	#menuDiv a:active, #menuDiv a:hover, p#here {border-bottom: 3px solid black;}
-	p#here:hover, p#here:active {border-bottom: none;}
-	nav {width: 20%; height: 80%; background: #FF9999; float: left; overflow: scroll;}
-	ul {list-style: none; text-align: center; padding-left:0;}
-	li {color: white; border: 2px solid white; border-bottom: 0px; padding: 0.5em;}
+	@charset "utf-8";
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    body{
+    		height: 100%;
+    		width: 100%;
+    		margin: 0;
+            padding: 0;
+    	}
+	header {
+            z-index: 99;
+            position: fixed;
+            width: 100%;
+            height: 90px;
+            padding-left: 50px;
+            box-shadow: 2px 0px 4px #0000004f;
+            background-color: white;
+
+            display: flex;
+        }
+	section {
+			margin-top: 90px;
+			height: 80%; 
+			width: 75%; 
+			float: left; 
+			overflow: scroll; 
+			padding-left: 5%;
+			padding-top: 5%;
+			-ms-overflow-style: none;
+		}
+	section::-webkit-scrollbar{
+			display: none;
+	}
+	#logo {
+            width: 90px;
+       	}
+    .topnav {
+            width: 100px;
+            text-align: center;
+            padding: 30px 10px;
+            margin-left: 60px;
+            font-size: 22px;
+            text-decoration: none;
+            color: black;
+            font-family: 'Yrsa', serif;
+        }
+     .topnav:hover {
+            border-bottom: 3px solid #FD5D5D;
+            color: #FD5D5D;
+        }
+	h2 a {
+			text-decoration: none;
+		}
+	nav {
+			margin-top: 90px; 
+			width: 20%; 
+			height: 80%; 
+			float: left; 
+			overflow: scroll;
+			-ms-overflow-style: none;
+		}
+	nav::-webkit-scrollbar{
+			display: none;
+		}
+	ul {
+			list-style: none; 
+		}
+	section div{
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	li {
+			color: black; 
+			height: 66px;
+			border: 1px solid #C5C5C5; 
+			padding-top: 1.3em;
+			box-sizing: border-box;
+			padding-left: 1em;
+			font-family: "Noto Sans KR", sans-selif;
+		}
+	li:hover {
+		background: #FFD7D7;
+		}
+	#input{
+			width: 90%;
+			height: 50px;
+			margin: 12px;
+			left: -10px;
+
+			background: #EBEBEB;
+			border: 1px solid #EBEBEB;
+			border-radius: 15px;
+		}
+	#img{
+			width: 224px;
+			height: 224px;
+			background: #FFECEC;
+			border-radius: 10px;
+			float: left;
+		}
+	#nameTag{
+			float: left;
+			position: relative;
+			margin-left: 14px;
+			width: 592px;
+			height: 224px;
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#innerNameTag{
+			position: absolute;
+			bottom: 18px;
+			left: 18px;
+		}
+	#flowLang{
+			width: 794px;
+			height: 91px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fContent{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fUse{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fGrow{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
+	#fType{
+			width: 794px;
+			height: 131px;
+			float: left;
+			padding: 17px 18px 0 18px;
+			margin-top: 13px;
+
+			background: #FFECEC;
+			border-radius: 10px;
+		}
 </style>
 </head>
 <body>
-	<header>
-		<h2><a href="Main.html">FIORE</a></h2>
-		<div id="menuDiv"><strong>
-			<p id="here" style="margin-top: 1.5%;"><a href="Information.html">Flower Information</a></p>
-			<p><a href="Recommend.html">Recommend</a></p>
-			<p><a href="Spot.html">Flower Spot</a></p>
-			<p><a href="Gardening.html">Gardening</a></p>
-		</strong></div>
-	</header>
+	<header id="topbar">
+        <a href="Main.html"> <img id="logo" src="./img/logo.png"> </a>
+        <a class="topnav">Flower<br>Information</a>
+        <a class="topnav">Recommend</a>
+        <a class="topnav">Flower<br>Spot</a>
+        <a class="topnav" href="Gardening.html">Gardening</a>
+    </header>
 	<nav id="nav">
-		<input onkeyup="searchName()" type="text" id="input" size=100% placeholder="꽃 이름 검색" value="">
 		<ul id="list">
+		<input onkeyup="searchName()" type="text" id="input" placeholder="꽃 이름 검색" value="">
 		</ul>
 	</nav>
 	<section id="section">
 	</section>
 	<script>
 	let xhr = new XMLHttpRequest();
-	let url = 'http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01'; /*URL*/
-	let queryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D'; /*Service Key*/
-	//queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-	queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('366'); /**/
-	//queryParams += '&' + encodeURIComponent('fCsnt') + '=' + encodeURIComponent('ㄱ'); /**/
-	//queryParams += '&' + encodeURIComponent('fMonth') + '=' + encodeURIComponent(''); /**/
-	//queryParams += '&' + encodeURIComponent('fDay') + '=' + encodeURIComponent(''); /**/
-	queryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('1'); /**/
-	//queryParams += '&' + encodeURIComponent('searchWord') + '=' + encodeURIComponent(''); /**/
+	let url = 'http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01';
+	let queryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
+	queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('366');
+	queryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('1');
 	xhr.open('GET', url + queryParams);
 	xhr.onreadystatechange = function () {
 	    if (this.readyState == 4) {
@@ -60,8 +206,6 @@
 	        	let childObj = document.createElement("li");
 	        	childObj.addEventListener("click", aboutList);
 	        	childObj.innerHTML = flowNm[i].childNodes[0].nodeValue;
-	        	if(i == flowNm.length-1)
-	        		childObj.style.borderBottom = "2px solid white";
 	        	n.appendChild(childObj);
 	        }
 	    }
@@ -73,12 +217,10 @@
 	
 	function aboutList(){
 		if(lastObj){
-			lastObj.style.backgroundColor = "#FF9999";
-			lastObj.style.color = "white";
+			lastObj.style.backgroundColor = "white";
 		}
 		lastObj = this;
-		this.style.backgroundColor = "white";
-		this.style.color = "#FF9999";
+		this.style.backgroundColor = "#FFD7D7";
 		let eventQueryParams = '?' + encodeURIComponent('serviceKey') + '='+'R7Y2gKOGiTpCr38JTAdNMKjKIkgRaqgUZteHLc%2B1KTuhpY5vBCGXORI9UB6K%2B%2FfaNeBi2EHOtxFa14q6ZsdTXg%3D%3D';
 		eventQueryParams += '&' + encodeURIComponent('searchType') + '=' + encodeURIComponent('9');
 		eventQueryParams += '&' + encodeURIComponent('searchWord') + '=' + encodeURIComponent(this.innerHTML);
@@ -118,15 +260,15 @@
 		    	    	let imgUrl1 = imgUrl1Obj[0].childNodes[0].nodeValue;
 		    	    	let section = document.getElementById("section");
 		    	    	section.innerHTML = "";
-		    	    	section.innerHTML = "<h1>"+flowNm+"</h1>";
-		    	    	section.innerHTML += "<p>학명: "+fSctNm+"</p>";
-		    	    	section.innerHTML += "<p>영문: "+fEngNm+"</p>";
-		    	    	section.innerHTML += "<p>꽃말: "+flowLang+"</p><br>";
-		    	    	section.innerHTML += "<h3>설명:</h3><p>"+fContent+"</p><br>";
-		    	    	section.innerHTML += "<h3>활용법:</h3><p>"+fUse+"</p><br>";
-		    	    	section.innerHTML += "<h3>키우는 법:</h3><p>"+fGrow+"</p><br>";
-		    	    	section.innerHTML += "<h3>자생지:</h3><p>"+fType+"</p><br>";
-		    	    	section.innerHTML += "<h3>이미지:</h3><img src='"+imgUrl1+"'>";
+		    	    	section.innerHTML = "<div id='img' style='background: url("+imgUrl1+"); background-repeat : no-repeat; background-size: cover;'></div>";
+		    	    	section.innerHTML += "<div id='nameTag'><div id='innerNameTag'><h1>"+flowNm+"</h1>"+
+		    	    						 "<p id='fSctNm'>"+fSctNm+"</p>" +
+		    	    						 "<p id='fEngNm'>"+fEngNm+"</p></div></div>";
+		    	    	section.innerHTML += "<div id='flowLang'><h3>꽃말</h3><br><p>"+flowLang+"</p></div>";
+		    	    	section.innerHTML += "<div id='fContent'><h3>설명</h3><br><p>"+fContent+"</p></div>";
+		    	    	section.innerHTML += "<div id='fUse'><h3>이용법</h3><br><p>"+fUse+"</p></div>";
+		    	    	section.innerHTML += "<div id='fGrow'><h3>기르는 법</h3><br><p>"+fGrow+"</p></div>";
+		    	    	section.innerHTML += "<div id='fType'><h3>자생지</h3><br><p>"+fType+"</p></div>";
 		    	    }
 		    	};
 		    	xhr.send('');
@@ -143,7 +285,6 @@
 			itemName = liObj[i].innerHTML;
 			if(itemName.indexOf(value)>-1){
 				liObj[i].style.display = "flex";
-				liObj[i].style.borderBottom = "2px solid white";
 			}else{
 				liObj[i].style.display = "none";
 			}
