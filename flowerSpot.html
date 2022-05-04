@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower Spot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yrsa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="flowerSpot.css">
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=brz95ltnbc"></script>
+</head>
+<body>
+	<header id="topbar">
+	    <a href="Main.html"> <img id="logo" src="./img/logo.png"> </a>
+	    <a href="Infomation.html" class="topnav">Flower Info</a>
+	    <a href="recommend.html" class="topnav">Recommend</a>
+	    <a href="flowerSpot.html" class="topnav">Flower Spot</a>
+	    <a href="Gardening.html" class="topnav">Gardening</a>
+	</header>
+  <main>
+    <!-- 지도 section -->
+    <section id="mapbox">
+      <div id="map"></div>
+      <div id="commentDiv" style="position:absolute"></div>
+    </section>
+
+    <!-- 꽃 정보 section -->
+    <section id="flowerSpot">
+      <h1 class="tableHeader">Korea's Flower Hotspots of 2022</h1>
+      <article>
+        <table>
+          <thead>
+            <tr>
+              <th>Flower</th>
+              <th>Spot</th>
+              <th>Season</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3" class="flowerType">벚꽃</td>
+              <td class="places" id="pl1">서울 여의도 한강공원</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td class="places" id="pl2">하동 쌍계사</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td class="places" id="pl3">경주 보문단지</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td rowspan="1" class="flowerType">튤립</td>
+              <td class="places" id="pl4">제주 상효원</td>
+              <td>3월 초~4월 초</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="flowerType">매화</td>
+              <td class="places" id="pl5">하동 직전리</td>
+              <td>3월 중순~3월 말</td>
+            </tr>
+            <tr>
+              <td class="places" id="pl6">광양 매화마을</td>
+              <td>3월 중순~3월 말</td>
+            </tr>
+            <tr>
+              <td rowspan="1" class="flowerType">산수유</td>
+              <td class="places" id="pl7">구례 산동면</td>
+              <td>3월 중순~4월 중순</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="flowerType">유채꽃</td>
+              <td  class="places" id="pl8">삼척 상맹방리</td>
+              <td>3월 말~4월 중순</td>
+            </tr>
+            <tr>
+              <td class="places" id="pl9">제주 가시리</td>
+              <td>3월 말~4월 초</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="flowerType">등나무꽃</td>
+              <td class="places" id="pl10">공주 동학사</td>
+              <td>4월 말~5월 중순</td>
+            </tr>
+            <tr>
+              <td class="places" id="pl11">대구 청라언덕</td>
+              <td>4월 말~5월 중순</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <p id="dataSource">자료출처 : 대한민국 기상청, 한국신문기사, 대한민국 정책브리핑, 거제도 농업기술원</p>
+    </section>
+  </main>
+  <div id="modal" class="modal-overlay">
+    <div class="modal-window">
+        <div class="title">
+            <h2 id="placeName">장소이름</h2>
+        </div>
+        <div class="close-area">X</div>
+        <div class="content">
+            <p id="placeExp">설명</p>
+        </div>
+    </div>
+  </div>
+<script src="flowerSpot.js"></script>
+</body>
+</html>

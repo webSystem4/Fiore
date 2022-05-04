@@ -25,30 +25,31 @@
         }
 
         header {
-            z-index: 1;
+            z-index: 99;
             position: fixed;
             width: 100%;
             height: 90px;
             padding-left: 50px;
+            background-color: white;
 
             display: flex;
         }
-
         #logo {
             width: 90px;
         }
-
-        a {
+        .topnav {
             width: 120px;
             text-align: center;
             padding: 30px 10px;
             margin-left: 60px;
             font-size: 22px;
             text-decoration: none;
+            color: black;
+            font-family: 'Yrsa', serif;
         }
-
         .topnav:hover {
-            border-bottom: 3px solid white;
+            border-bottom: 3px solid #FD5D5D;
+            color: #FD5D5D;
         }
 
         section {
@@ -79,6 +80,7 @@
             font-size: 32px;
             padding: 10px 0px;
             text-align: left;
+            text-decoration: none;
         }
 
         .footerA:hover {
@@ -122,9 +124,9 @@
 </head>
 
 <body>
-   <header id="topbar">
-        <img id="logo" src="./img/whitelogo.png">
-        <a href="Information.html" class="topnav">Flower Info</a>
+	<header id="topbar">
+        <a href="Main.html"> <img id="logo" src="./img/logo.png"> </a>
+        <a href="Infomation.html" class="topnav">Flower Info</a>
         <a href="recommend.html" class="topnav">Recommend</a>
         <a href="flowerSpot.html" class="topnav">Flower Spot</a>
         <a href="Gardening.html" class="topnav">Gardening</a>
@@ -133,10 +135,10 @@
     </section>
     <footer>
         <div id="footerList">
-            <a class="footerA">Information </a>
-            <a class="footerA">Recommend</a>
-            <a class="footerA">Spot</a>
-            <a class="footerA" href="Gardening.html">Gardening</a>
+            <a href="Infomation.html" class="footerA">Information </a>
+            <a href="recommend.html" class="footerA">Recommend</a>
+            <a href="flowerSpot.html" class="footerA">Spot</a>
+            <a href="Gardening.html" 	class="footerA" >Gardening</a>
         </div>
         <div id="footerInformation">
             <img id="footlogo" src="./img/whitelogo.png">
@@ -165,12 +167,12 @@
             document.getElementsByClassName("topnav")[2].style.color = "#000000";
             document.getElementsByClassName("topnav")[3].style.color = "#000000";
         }else{
-            document.getElementById("topbar").style.backgroundColor = "";
+            document.getElementById("topbar").style.backgroundColor = "#ffffff00";
             document.getElementById("logo").src = "./img/whitelogo.png"
-            document.getElementsByClassName("topnav")[0].style.color = "";
-            document.getElementsByClassName("topnav")[1].style.color = "";
-            document.getElementsByClassName("topnav")[2].style.color = "";
-            document.getElementsByClassName("topnav")[3].style.color = "";
+            document.getElementsByClassName("topnav")[0].style.color = "#ffffff";
+            document.getElementsByClassName("topnav")[1].style.color = "#ffffff";
+            document.getElementsByClassName("topnav")[2].style.color = "#ffffff";
+            document.getElementsByClassName("topnav")[3].style.color = "#ffffff";
             
         }
     });
